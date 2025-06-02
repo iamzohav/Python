@@ -1,1 +1,1 @@
-ho "Hello from Jenkins-v1"
+echo "Hello from Jenkins-v1"
