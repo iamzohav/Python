@@ -1,51 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shinchan Fan Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS Introduction</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #fef6e4;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      background: #f8f9fa;
     }
     header {
-      background-color: #f582ae;
-      padding: 20px;
+      background-color: #232f3e;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #37475a;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    nav button:hover {
+      background-color: #485769;
+    }
+    section {
+      display: none;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      margin-top: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section.active {
+      display: block;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    form input {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 0.5rem;
+      background: #ff9900;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
       color: white;
     }
-    h1 {
-      margin: 0;
-    }
-    .content {
-      padding: 20px;
-    }
-    img {
-      width: 300px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    p {
-      font-size: 18px;
-      color: #333;
-      max-width: 600px;
-      margin: 20px auto;
+    form button:hover {
+      background: #e68a00;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Shinchan - The Little Prankster</h1>
+    <h1>Welcome to AWS Introduction</h1>
   </header>
-  <div class="content">
-    <img src="shinchan.jpg" alt="Shinchan">
-    <p>
-      Shinchan Nohara is a mischievous and witty 5-year-old boy from the Japanese manga and anime series. 
-      Known for his hilarious antics, funny expressions, and love for chocolates and pretty girls, 
-      Shinchan never fails to make everyone laugh!
-    </p>
-  </div>
+
+  <nav>
+    <button onclick="showTab('home')">Home</button>
+    <button onclick="showTab('services')">Services</button>
+    <button onclick="showTab('about')">About</button>
+    <button onclick="showTab('signin')">Sign In</button>
+  </nav>
+
+  <section id="home" class="active">
+    <h2>What is AWS?</h2>
+    <p>AWS (Amazon Web Services) is the world’s most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally.</p>
+  </section>
+
+  <section id="services">
+    <h2>Popular AWS Services</h2>
+    <ul>
+      <li><strong>EC2</strong> – Virtual Servers in the Cloud</li>
+      <li><strong>S3</strong> – Scalable Object Storage</li>
+      <li><strong>Lambda</strong> – Serverless Compute</li>
+      <li><strong>RDS</strong> – Managed Relational Databases</li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>About AWS</h2>
+    <p>Launched in 2006, AWS provides reliable, scalable, and inexpensive cloud computing services, helping businesses move faster and lower IT costs.</p>
+  </section>
+
+  <section id="signin">
+    <h2>Sign In</h2>
+    <form>
+      <label>Email:</label>
+      <input type="email" required placeholder="Enter your email"/>
+      <label>Password:</label>
+      <input type="password" required placeholder="Enter your password"/>
+      <button type="submit">Sign In</button>
+    </form>
+  </section>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
 </body>
 </html>
