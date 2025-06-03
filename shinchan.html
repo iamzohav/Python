@@ -20,29 +20,26 @@
       display: flex;
       justify-content: center;
       background-color: #37475a;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    nav button {
-      background: none;
-      border: none;
+    nav a {
       color: white;
+      text-decoration: none;
       padding: 1rem;
-      cursor: pointer;
-      font-size: 1rem;
+      display: inline-block;
     }
-    nav button:hover {
+    nav a:hover {
       background-color: #485769;
     }
     section {
-      display: none;
       padding: 2rem;
       max-width: 800px;
       margin: auto;
       background: white;
       margin-top: 1rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    section.active {
-      display: block;
     }
     form {
       display: flex;
@@ -64,6 +61,9 @@
     form button:hover {
       background: #e68a00;
     }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
@@ -72,13 +72,13 @@
   </header>
 
   <nav>
-    <button onclick="showTab('home')">Home</button>
-    <button onclick="showTab('services')">Services</button>
-    <button onclick="showTab('about')">About</button>
-    <button onclick="showTab('signin')">Sign In</button>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#signin">Sign In</a>
   </nav>
 
-  <section id="home" class="active">
+  <section id="home">
     <h2>What is AWS?</h2>
     <p>AWS (Amazon Web Services) is the world’s most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally.</p>
   </section>
@@ -108,12 +108,5 @@
       <button type="submit">Sign In</button>
     </form>
   </section>
-
-  <script>
-    function showTab(id) {
-      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-  </script>
 </body>
 </html>
